@@ -1,0 +1,74 @@
+各文件介绍：
+	1.wxml文件描述页面的结构，类似于html
+		1).WXML 要求标签必须是严格闭合的
+		2).WXML中的属性是大小写敏感的
+		3).
+	2.wxss文件用来节点的样式，类似于css
+	3.json文件无法添加注释
+	4.
+
+WXSS（WeiXin Style Sheets）
+	1.根目录中的app.wxss为项目公共样式，它会被注入到小程序的每个页面
+	2.页面样式：与app.json注册过的页面同名且位置同级的WXSS文件
+	3.其它样式：其它样式可以被项目公共样式和页面样式引用
+		引用方法： @import ''
+
+JavaScript脚本
+	1.小程序中的JavaScript:ECMAScript		小程序框架		小程序 API
+	2.小程序的执行环境:ECMAScript的标准不同;小程序IDE将 ECMAScript 6代码转为 ECMAScript 5代码
+		iOS平台，包括iOS9(不完全兼容ES6)、iOS10(不完全兼容ES6)、iOS11
+		Android平台
+		小程序IDE
+	3.模块化
+		小程序中可以将任何一个JavaScript 文件作为一个模块，通过module.exports 或者 exports 对外暴露接口
+		module.js
+			module.exports = (params) =>{
+			  console.log(params)
+			}
+		index.js ----> 引用 ----> require('')
+	4.脚本执行顺序
+		app.js ----> 开发者在 app.json 中定义的 pages 的顺序，逐一执行
+	5.作用域
+		在文件中声明的变量和函数只在该文件中有效，不同的文件中可以声明相同名字的变量和函数，不会互相影响
+		当需要使用全局变量的时，通过使用全局函数 getApp() 获取全局的实例，并设置相关属性值
+		var global = getApp()   	global.globalValue = 'globalValue'
+
+
+小程序语法
+	1.数据绑定；WXML 通过 {{变量名}} 来绑定 WXML 文件和对应的 JavaScript 文件中的 data 对象属性
+	2.属性值也可以动态的去改变，有所不同的是，属性值必须被包裹在双引号中
+	3.没有被定义的变量的或者是被设置为 undefined 的变量不会被同步到 wxml 中
+	4.wx:if="{{data}}" 来判断是否需要渲染该代码块    
+		wx:elif    
+		wx:else
+	5.列表渲染微信：wx:for="{{}}"   
+		wx:for-item----指定数组当前元素的变量名   
+		wx:for-index----指定数组当前下标的变量名
+		wx:key----代表在for循环的array中item的某个property，该property的值需要是列表中唯一的字符串或数字，且不能动态改变；提高列表渲染时的效率
+	6.模板：<template name="name"></template>
+		模板引用： WXML 提供两种文件引用方式import和include
+			import 可以在该文件中使用目标文件定义的 template;   只会 import 目标文件中定义的 template，而不会 import 目标文件中 import 的 template，
+			include 可以将目标文件中除了 <template/> <wxs/> 外的整个代码引入
+	7.共同属性：所有wxml 标签都支持的属性称之为共同属性
+		id	String	组件的唯一标识	整个页面唯一
+		class	String	组件的样式类	在对应的 WXSS 中定义的样式类
+		style	String	组件的内联样式	可以动态设置的内联样式
+		hidden	Boolean	组件是否显示	所有组件默认显示
+		data-*	Any	自定义属性	组件上触发的事件时，会发送给事件处理函数
+		bind*/catch*	EventHandler	组件的事件
+
+小程序宿主环境
+	1.
+
+
+
+
+
+其他：
+	1.浏览器中的JavaScript:ECMAScript		DOM		BOM
+	2.nodeJs中的JavaScript:ECMAScript		npm		Native
+	3.小程序中的JavaScript:ECMAScript		小程序框架		小程序 API
+
+
+
+

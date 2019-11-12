@@ -1,0 +1,12 @@
+/*import 导入其他路径wxss*/
+@import './wxss/wxss.wxss';
+page{
+  font-size:30rpx;
+}
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.center{
+  font-size:40rpx;
+}

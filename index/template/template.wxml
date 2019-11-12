@@ -1,0 +1,5 @@
+<template name="tem">
+  <view>我是模板加载的数据</view>
+  <view>{{name}}</view>
+  <include src="../footer.wxml" /> 
+</template>

@@ -1,0 +1,4 @@
+.importWxss{
+  text-align:center;
+  font-size:20rpx;
+}

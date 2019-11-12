@@ -1,0 +1,20 @@
+<import src="./template/template.wxml"/>  <!-- 加载模板 -->
+
+<view>{{global}}</view><!-- 测试全局变量 -->
+<view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档123</view>
+<view class='importWxss'>{{time}}---测试</view>
+
+<!-- 测试wx:if -->
+<view wx:if="{{!isShow}}">{{array[0]}}----{{array[1]}}</view>
+<!-- 测试click事件 -->
+<button bindtap="clickMe">点击我</button>
+<view class='center'>{{msg}}</view>
+<!-- 测试wx:for -->
+<view wx:for="{{arr}}" wx:key="index" wx:for-index="idx" wx:for-item="items">
+  {{idx}}----{{items}}
+</view>
+<switch wx:for="{{arr}}" wx:key="unique" > {{item}} </switch>
+
+<!-- 测试template模板 -->
+<template is="tem" data="{{...dataObj}}"/>
+
