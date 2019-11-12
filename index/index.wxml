@@ -7,7 +7,7 @@
 <!-- 测试wx:if -->
 <view wx:if="{{!isShow}}">{{array[0]}}----{{array[1]}}</view>
 <!-- 测试click事件 -->
-<button bindtap="clickMe">点击我</button>
+<button bindtap="clickMe">点击我出现数据</button>
 <view class='center'>{{msg}}</view>
 <!-- 测试wx:for -->
 <view wx:for="{{arr}}" wx:key="index" wx:for-index="idx" wx:for-item="items">
